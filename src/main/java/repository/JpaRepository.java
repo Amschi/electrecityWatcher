@@ -1,4 +1,4 @@
-package Repository;
+package repository;
 
-public interface JpaRepository {
+public interface JpaRepository<T, T1> {
 }
