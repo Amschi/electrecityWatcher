@@ -4,9 +4,9 @@ public class Centrale {
 
 private final Integer id;
 private final String nature;
-private final String capacite;
+private final Integer capacite;
 
-  public Centrale(Integer id, String nature, String capacite) {
+  public Centrale(Integer id, String nature, Integer capacite) {
     this.id = id;
     this.nature = nature;
     this.capacite = capacite;
@@ -20,7 +20,7 @@ private final String capacite;
     return nature;
   }
 
-  public String getCapacite() {
+  public Integer getCapacite() {
     return capacite;
   }
 }

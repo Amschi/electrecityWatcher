@@ -6,8 +6,7 @@ import javax.persistence.Table;
 import java.util.List;
 import java.util.Map;
 
-@Entity
-@Table(name = "Utilisateur")
+
 public class Utilisateur {
 
   private final Integer id;
@@ -16,12 +15,20 @@ public class Utilisateur {
   private final List<Centrale> listCentrale;
   private final Map<String, Integer> historiqueProduction;
 
-  private Utilisateur(Builder builder) {
-    this.id = builder.getId();
-    this.name = builder.getName();
-    this.password = builder.getPassword();
-    this.listCentrale = builder.getListCentrale();
-    this.historiqueProduction = builder.getHistoriqueProduction();
+  private Utilisateur(Integer id, String name, String password, List<Centrale> listCentrale, Map<String, Integer> historiqueProduction) {
+    this.id = id;
+    this.name = name;
+    this.password = password;
+    this.listCentrale = listCentrale;
+    this.historiqueProduction = historiqueProduction;
+  }
+
+  public List<Centrale> getListCentrale() {
+    return listCentrale;
+  }
+
+  public Integer getId() {
+    return id;
   }
 
   public static Builder newBuilder() {
@@ -36,12 +43,7 @@ public class Utilisateur {
     private List<Centrale> listCentrale;
     private Map<String, Integer> historiqueProduction;
 
-    Builder() {
-    }
 
-    Utilisateur build() {
-      return new Utilisateur(this);
-    }
 
     public Builder id(Integer id) {
       Id = id;
@@ -68,28 +70,15 @@ public class Utilisateur {
       return this;
     }
 
-    public Integer getId() {
-      return Id;
+    public Utilisateur build() {
+      return new Utilisateur(this.Id, this.name, this.password, this.listCentrale, this.historiqueProduction);
     }
 
-    public String getName() {
-      return name;
-    }
 
-    public String getPassword() {
-      return password;
-    }
-
-    public List<Centrale> getListCentrale() {
-      return listCentrale;
-    }
-
-    public Map<String, Integer> getHistoriqueProduction() {
-      return historiqueProduction;
     }
   }
 
-}
+
 
 
 
