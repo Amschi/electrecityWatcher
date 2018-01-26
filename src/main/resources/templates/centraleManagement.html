@@ -3,11 +3,15 @@
       xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{fragments/layout}">
 <head>
-    <title>Access Denied</title>
+    <title>Secured</title>
 </head>
 <body>
 <div layout:fragment="content" th:remove="tag">
-    <h1>L'utilisateur existe déjà, veuillez réessayer</h1>
+    <h1>Welcome on your Centrale Management platform</h1>
+    <p th:text="'You can now manage your plant ' + ${centrale.nature}"/>
+
+
+
 </div>
 </body>
 </html>

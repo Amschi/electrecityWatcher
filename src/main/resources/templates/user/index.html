@@ -7,8 +7,21 @@
 </head>
 <body>
 <div layout:fragment="content" th:remove="tag">
-    <h1>This is a secured page!</h1>
-    <p><a href="/" th:href="@{/}">Back to home page</a></p>
+    <h1>Welcome on your account! </h1>
+    <p th:text="'You can now create your plant ' + ${utilisateur.name}"/>
+
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <a th:href="centraleInput"><input type="submit"
+                   name="login-submit"
+                   id="login-submit"
+                   class="form-control btn btn-info"
+                   value="Create plant"> </a>
+        </div>
+    </div>
+
+
 </div>
 </body>
 </html>

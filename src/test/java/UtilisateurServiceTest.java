@@ -13,17 +13,8 @@ public class UtilisateurServiceTest {
   @Test
   public void getListCentraleUtilisateurDoitRetournerListVideSiPasDeCentraleCree() {
     //GIVEN
-    UtilisateurService utilisateurService = new UtilisateurService();
-
-    List<Centrale> listCentraleExpected = new ArrayList();
-    Utilisateur utilisateur = Utilisateur.newBuilder().id(1).name("Amaury").password("foo").build();
 
 
-    //WHEN
-
-    //THEN
-    assertThat(utilisateurService.getListCentraleUtilisateur()).isEqualTo(listCentraleExpected);
   }
-
 
 }
